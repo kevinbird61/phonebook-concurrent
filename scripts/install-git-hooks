@@ -1,4 +1,8 @@
 #!/bin/sh
 
 ln -sf ../../scripts/pre-commit.hook .git/hooks/pre-commit
-echo "OK"
+if [ "$?" -eq 0 ]; then
+  echo "OK"
+else
+  echo "Failed to install pre-commit.hook"
+fi
